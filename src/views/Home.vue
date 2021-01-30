@@ -8,45 +8,23 @@
         </div>
 
 
-        <!-- <div>
-           Passing  all the matches played by a team data(allMatches) to the TeamMatches component
-              <teammatches :allMatches="allMatches">
-           </teammatches>  
-              </div>  -->
-
         <div>
-            <h1>All Matches</h1>
-
-            <v-container>
-                <v-card color="#FAFAFA" flat v-for="(matches,i)  in allMatches" :key="matches[i].id">
-                    <v-layout row wrap>
-                        <v-flex xs12 sm6 md4 class="mx-auto" v-for="match in matches" :key="match.id">
-                            <v-card color="#3F1052" dende class="text-center  ma-2">
-                                <v-card-text>
-                                    <div class="subheading grey--text font-weight-bold">{{match.title}}</div>
-                                </v-card-text>
-                            </v-card>
-                        </v-flex>
-                    </v-layout>
-                </v-card>
-            </v-container>
-        </div>
-
-    </div>
-
-
-
+           <!-- Passing  all the matches played by a team data(allMatches) to the TeamMatches component -->
+            <teammatches :allMatches="allMatches">
+            </teammatches>  
+          </div> 
+      </div>
 
 </template>
 
 <script>
     import axios from 'axios'
     import schedules from '@/components/Schedules.vue';
-    // import teammatches from '@/components/TeamMatches.vue';
+    import teammatches from '@/components/TeamMatches.vue';
     export default {
         components: {
             schedules,
-            // teammatches,
+            teammatches,
 
         },
         data() {
