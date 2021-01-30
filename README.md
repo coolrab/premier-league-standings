@@ -1,5 +1,5 @@
 # premier-league-standings
-
+A web APP for the English Premier League standings. Follow the instructions for project setup.
 ## Project setup
 ```
 npm install
