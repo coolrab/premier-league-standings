@@ -1,32 +1,48 @@
+  
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+    <v-app id="inspire">
+        <!-- App bar with the logo -->
+        <v-app-bar app color="#3F1052">
+            <v-app-bar-icon @click="goHome">
+                <v-avatar>
+                    <img src="epl.png" alt="English Premier League">
+                </v-avatar>
+            </v-app-bar-icon>
+              <!-- App bar with the title -->
+            <v-toolbar-title class="flex text-center pt-4 pb-1">
+                <h3 class="subheading grey--text">Premier League Standings</h3>
+                <p class="font-weight-regular grey--text">Season 2020-21</p>
+            </v-toolbar-title>
+        </v-app-bar>
+
+        <v-main>
+
+            <v-container fluid>
+              <!-- Vue router view -->
+                <router-view></router-view>
+
+            </v-container>
+        </v-main>
+    </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+    export default {
+        name: 'App',
 
-#nav {
-  padding: 30px;
+        components: {
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+        },
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+        data: () => ({
+            drawer: null
+        }),
+        methods: {
+            goHome() { //@click on the logo this method will directed to the home page 
+                this.$router.push('/')
+            }
+        }
+
+
+    };
+</script>
