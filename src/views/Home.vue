@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>
+        <div v-show="isHide">
           <!-- Passing  team status data(sports) to the schedules component-->
           <!-- receiving event handler with team id -->
             <schedules :sports="sports" @getMatchData="getTeams"></schedules>
@@ -32,6 +32,7 @@
                 sports: [],
                 allMatches: [],
                 isLoading: false,
+                isHide: true,
 
             }
         },
@@ -141,7 +142,7 @@
                 } catch (error) {
                     console.log(error.message);
                 }
-
+                this.isHide = false //Hide the schedule element
                 this.isLoading = false
             }
         },
